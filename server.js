@@ -93,7 +93,7 @@ app.put('/updatePersonByID/:personID', (req, res) => {
 // Perform New Updates on a Document Using model.findOneAndUpdate()
 app.put('/updatePersonByName/:personName', (req, res) => {
     var ageToUpdate = 20;
-    Person.findOneAndUpdate({personName : req.params._id},{age : ageToUpdate},{new : true} , (err, person) => {
+    Person.findOneAndUpdate({personName : req.params.name},{age : ageToUpdate},{new : true} , (err, person) => {
         if (err) {
             return console.log(err)
         }else {
